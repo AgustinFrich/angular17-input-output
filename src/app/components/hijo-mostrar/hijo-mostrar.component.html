@@ -1,0 +1,61 @@
+<p>hijo-mostrar works!</p>
+
+@switch (nombre) { @case ("Agus") {
+<p>El nombre es Agus</p>
+} @case ("Lean") {
+<p>El nombre es Lean</p>
+
+} @default {
+<p>No se encuentra</p>
+} }
+
+<br />
+<br />
+<br />
+<hr />
+<hr />
+
+<!-- for -->
+<table>
+  <thead>
+    <th>Nombre</th>
+  </thead>
+  <tbody>
+    @for (n of array; track n) {
+    <tr>
+      {{
+        n
+      }}
+    </tr>
+    }
+  </tbody>
+</table>
+
+<!-- For anterior-->
+<div>
+  <p *ngFor="let n of array; let i = index">Indice: {{ i }}, Nombre: {{ n }}</p>
+</div>
+
+<!-- if -->
+<br />
+<br />
+<br />
+<hr />
+<hr />
+@if(logged) {
+<button (click)="logged = false">Log Out</button>
+} @else {
+<button (click)="logged = true">Log In</button>
+}
+
+<p>Estado del login: {{ logged }}</p>
+
+<!-- Otra version del if-->
+
+<div *ngIf="logged; else elseLogged">
+  <button (click)="logged = false">Log Out</button>
+</div>
+
+<ng-template #elseLogged>
+  <button (click)="logged = true">Log In</button>
+</ng-template>

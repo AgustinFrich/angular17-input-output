@@ -1,0 +1,16 @@
+<p>padre works!</p>
+
+<hr />
+
+<app-hijo-input
+  [variableHijo]="informacion"
+  (agregarEvent)="recibirAgregar($event)"
+></app-hijo-input>
+<app-hijo-input
+  [variableHijo]="tituloApellidos"
+  (agregarEvent)="recibirAgregarApellido($event)"
+>
+</app-hijo-input>
+<hr />
+
+<app-hijo-mostrar [array]="arrayNombres"></app-hijo-mostrar>
